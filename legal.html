@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Политика и согласие на обработку данных</title>
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Nunito:wght@700;800&display=swap">
+  <link rel="stylesheet" href="assets/app.css">
+  <script src="config.js"></script>
+</head>
+<body>
+  <div class="wrap narrow doc" id="doc"></div>
+  <script>
+    /* Типовой шаблон — мастеру стоит показать его юристу. */
+    (function () {
+      var C = HC_CONFIG, l = C.legal || {};
+      function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
+      var who = esc(l.owner) + (l.inn ? ' (ИНН ' + esc(l.inn) + ')' : '');
+      var contact = esc(l.email || C.brand.phone);
+      document.title = 'Политика и согласие — ' + C.brand.name;
+      document.getElementById('doc').innerHTML =
+        '<p><a href="index.html">← ' + esc(C.brand.name) + '</a></p>' +
+        '<h1 style="font-size:32px;margin-top:24px">Политика конфиденциальности</h1>' +
+        '<p style="margin-top:16px">Оператор персональных данных — ' + who + '. Мы обрабатываем только то, что вы сами указали в заявке: имя, телефон, адрес, фото мебели и комментарий.</p>' +
+        '<h2>Зачем</h2><p>Чтобы назвать цену, согласовать время выезда и связаться с вами по заявке. Мы не передаём данные третьим лицам и не используем их для рекламы.</p>' +
+        '<h2>Где и сколько хранятся</h2><p>На сервере в России. Заявки удаляются через 12 месяцев после выполнения или раньше — по вашей просьбе.</p>' +
+        '<h2>Ваши права</h2><p>Вы можете узнать, какие данные о вас хранятся, исправить их или попросить удалить: ' + contact + '.</p>' +
+        '<h1 id="consent" style="font-size:32px;margin-top:64px">Согласие на обработку персональных данных</h1>' +
+        '<p style="margin-top:16px">Отправляя заявку, я даю ' + who + ' согласие на обработку моих персональных данных (имя, телефон, адрес, фотографии мебели, комментарий) для расчёта стоимости, согласования и выполнения химчистки. ' +
+        'Согласие действует 12 месяцев и может быть отозвано письменным обращением: ' + contact + '.</p>';
+    })();
+  </script>
+</body>
+</html>
