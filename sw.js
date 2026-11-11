@@ -1,6 +1,6 @@
 /* Химчистка · офлайн-оболочка: страница открывается с телефона как приложение,
    даже при плохой связи. Заявки и статусы всегда берутся из сети. */
-var CACHE = 'hc-v2';
+var CACHE = 'hc-v3';
 var SHELL = ['./', 'index.html', 'admin.html', 'config.js', 'assets/app.css', 'assets/store.js', 'assets/app.js', 'assets/admin.js',
   'icon.svg', 'manifest.webmanifest', 'admin.webmanifest', 'icons/client-192.png', 'icons/admin-192.png'];
 
